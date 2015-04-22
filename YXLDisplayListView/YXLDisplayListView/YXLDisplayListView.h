@@ -10,6 +10,8 @@
 @class YZDisplayListView;
 
 @interface YXLDisplayListView : UIView
+
+
 /* 是否需要顶部分割线*/
 @property (nonatomic, assign) BOOL isNeedTopDivider;
 /* 选项卡普通状态颜色 */

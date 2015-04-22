@@ -87,7 +87,7 @@
 #pragma mark 添加顶部ScrollView
 - (void)addTopScrollView
 {
-    CGFloat scrollY = 64;
+    CGFloat scrollY = 0;
     
     CGFloat scrollW = self.frame.size.width;
     
