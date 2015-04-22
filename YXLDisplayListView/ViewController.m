@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "YXLDisplayListView.h"
-
+#import "Common.h"
 @interface ViewController ()
 
 @end
@@ -17,7 +17,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    YXLDisplayListView *Display =[[YXLDisplayListView alloc]initWithFrame:self.view.frame];
+
+    //ScrollView 不支持自适应UINavigationController 需自己去设置位子
+    self.automaticallyAdjustsScrollViewInsets=NO;
+    
+    YXLDisplayListView *Display =[[YXLDisplayListView alloc]initWithFrame:(CGRect){0,64,kWindowWidth,kWindowHeight-64}];
+    
     UIViewController * c1 = [self ViewControllerTitle:@"综合" ViewControllerBackgroundColor:[UIColor redColor]];
     UIViewController * c2 = [self ViewControllerTitle:@"距离最近" ViewControllerBackgroundColor:[UIColor greenColor]];
     UIViewController * c3 = [self ViewControllerTitle:@"人气最高" ViewControllerBackgroundColor:[UIColor blueColor]];
@@ -31,6 +36,7 @@
     Display.tabItemSelectedColor = [UIColor blackColor];
     //添加控制器到数组
     Display.viewControllers = controllers;
+    
     [self.view addSubview:Display];
 }
 
